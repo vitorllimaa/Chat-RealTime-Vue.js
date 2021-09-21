@@ -1,0 +1,25 @@
+* {
+    box-sizing: border-box;
+}
+
+.form-inline textarea {
+    height: 38px;
+    border-radius: 60px;
+    width: 396px!important;
+}
+.form-inline a {
+    border-radius: 60px;
+    margin: 5px;
+    height: 38px;
+    width: 90px;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    align-content: center;
+}
+
+.v-spinner {
+    margin-left: 18px;
+    padding: 5px;
+}
