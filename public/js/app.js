@@ -2081,6 +2081,9 @@ Vue.component('user', function () {
 Vue.component('Message', function () {
   return __webpack_require__.e(/*! import() */ "resources_js_components_chat_message_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./components/chat/message */ "./resources/js/components/chat/message.vue"));
 });
+Vue.component('message-user', function () {
+  return __webpack_require__.e(/*! import() */ "resources_js_components_chat_message-user_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./components/chat/message-user */ "./resources/js/components/chat/message-user.vue"));
+});
 var app = new Vue({
   store: _store_store__WEBPACK_IMPORTED_MODULE_0__["default"],
   el: '#app'
@@ -2151,17 +2154,35 @@ __webpack_require__.r(__webpack_exports__);
     messages: {},
     users: {}
   },
-  mutations: {},
+  mutations: {
+    MESSAGES_LOAD: function MESSAGES_LOAD(state, messages) {
+      state.messages = messages;
+    },
+    ADD_MESSAGE: function ADD_MESSAGE(state, message) {
+      state.messages.push(message);
+    }
+  },
   actions: {
+    messagesLoad: function messagesLoad(context) {
+      axios__WEBPACK_IMPORTED_MODULE_0___default().get('chat/messages').then(function (response) {
+        return context.commit('MESSAGES_LOAD', response.data);
+      })["catch"](function () {
+        return console.log('error');
+      })["finally"]();
+    },
     storeMessage: function storeMessage(context, params) {
       return axios__WEBPACK_IMPORTED_MODULE_0___default().post('chat/message', params).then(function (response) {
-        return console.log(response);
+        return context.commit('ADD_MESSAGE', response.data);
       })["catch"](function () {
         return console.log('error');
       })["finally"]();
     }
   },
-  getters: {}
+  getters: {
+    messages: function messages(state) {
+      return _.orderBy(state.messages, 'id', 'asc');
+    }
+  }
 });
 
 /***/ }),
@@ -51004,7 +51025,7 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames not based on template
-/******/ 			if ({"resources_js_components_chat_chat_vue":1,"resources_js_components_chat_user_vue":1,"resources_js_components_chat_message_vue":1}[chunkId]) return "js/" + chunkId + ".js";
+/******/ 			if ({"resources_js_components_chat_chat_vue":1,"resources_js_components_chat_user_vue":1,"resources_js_components_chat_message_vue":1,"resources_js_components_chat_message-user_vue":1}[chunkId]) return "js/" + chunkId + ".js";
 /******/ 			// return url for filenames based on template
 /******/ 			return undefined;
 /******/ 		};

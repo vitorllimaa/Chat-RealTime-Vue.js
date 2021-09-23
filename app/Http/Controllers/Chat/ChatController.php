@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Chat;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use phpDocumentor\Reflection\Types\This;
+use App\Models\Message;
 
 class ChatController extends Controller
 {
@@ -14,12 +15,30 @@ class ChatController extends Controller
         return view('chat.index');
     }
 
+    public function messages() {
+
+        $messages = new Message();
+
+        $messages = $messages->with('user')
+                             ->orderby('id', 'DESC')
+                             ->limit(50)
+                             ->latest()
+                             ->get();
+
+        return response()->json($messages, 200);
+
+    }
+
     public function store(Request $request) {
 
-        $message = auth()->user()->message()->create([
+        $user = auth()->user();
+        $message = $user->message()->create([
             'body' => $request->body
         ]);
 
+        $message['user'] = $user;
+
         return response()->json($message, 201);
     }
+
 }

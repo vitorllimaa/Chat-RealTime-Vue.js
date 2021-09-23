@@ -13,6 +13,7 @@ import store from './store/store'
 Vue.component('chat', () => import('./components/chat/chat'))
 Vue.component('user', () => import('./components/chat/user'))
 Vue.component('Message', () => import('./components/chat/message'))
+Vue.component('message-user', () => import('./components/chat/message-user'))
 
 
 const app = new Vue({

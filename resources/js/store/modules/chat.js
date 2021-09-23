@@ -8,19 +8,34 @@ export default {
     },
 
     mutations: {
+        MESSAGES_LOAD (state, messages) {
+            state.messages = messages
+        },
+
+        ADD_MESSAGE (state, message) {
+            state.messages.push(message)
+        }
 
     },
 
     actions: {
+        messagesLoad (context) {
+            axios.get('chat/messages')
+                     .then(response => context.commit('MESSAGES_LOAD', response.data))
+                     .catch(() => console.log('error'))
+                     .finally()
+        },
         storeMessage (context, params) {
             return axios.post('chat/message', params)
-                            .then(response => console.log(response))
+                            .then(response => context.commit('ADD_MESSAGE', response.data))
                             .catch(() => console.log('error'))
                             .finally()
         }
     },
 
     getters: {
-
+        messages (state) {
+            return _.orderBy(state.messages, 'id', 'asc')
+        }
     }
 }

@@ -3,7 +3,8 @@
         <Message></Message>
         <div class="form-inline">
             <textarea @keypress="keypressMessage" v-model="body" placeholder="Sua Messagem..." class="form-control" cols="1" rows="3"></textarea>
-            <a @click.prevent="sendMessage" href="" class="btn btn-success">Enviar <box-icon name='send' type='solid' color='rgba(0,0,0,0.2)'></box-icon></a>
+            <a @click.prevent="sendMessage" href="" v-if="!loading" class="btn btn-success">Enviar <box-icon name='send' type='solid' color='rgba(0,0,0,0.1)'></box-icon></a>
+            <a @click.prevent="sendMessage" href="" v-else class="btn btn-success disable">Enviar <box-icon name='send' type='solid' color='rgba(0,0,0,0.1)'></box-icon></a>
         </div>
             <pulse-loader :loading="loading" :color="'#2fa360'" :size="'8PX'"></pulse-loader>
     </div>
@@ -26,6 +27,7 @@ export default {
             }
         },
         sendMessage() {
+            if(this.body != '' && this.body && !this.loading){
             this.loading = true;
             this.$store.dispatch('storeMessage', {body: this.body})
                 .then(() => {
@@ -35,6 +37,7 @@ export default {
                 }).finally(() => {
                     this.loading = false;
                 });
+         }
         }
 
     },
@@ -43,4 +46,34 @@ export default {
     }
 }
 </script>
+
+<style>
+.btn-success.disable {
+    cursor: no-drop!important;
+}
+
+.form-inline textarea {
+    height: 38px;
+    border-radius: 60px;
+    width: 396px!important;
+}
+
+.form-inline a {
+    padding: 8px;
+    border-radius: 60px;
+    margin: 5px;
+    height: 38px;
+    width: 76px;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    align-content: center;
+}
+
+.v-spinner {
+    margin-left: 18px;
+    padding: 5px;
+}
+</style>
 

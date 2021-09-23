@@ -8,6 +8,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('chat', [ChatController::class, 'index'])->name('chat');
     Route::post('chat/message', [ChatController::class, 'store']);
 
+    Route::get('chat/messages', [ChatController::class, 'messages'])->name('messageschat');
+
 });
 
 Route::get('/', function () {
