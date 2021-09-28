@@ -102,7 +102,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.btn-success.disable {\n    cursor: no-drop!important;\n}\n.form-inline textarea {\n    height: 38px;\n    border-radius: 60px;\n    width: 396px!important;\n}\n.form-inline a {\n    padding: 8px;\n    border-radius: 60px;\n    margin: 5px;\n    height: 38px;\n    width: 76px;\n    font-size: 13px;\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n    align-content: center;\n}\n.v-spinner {\n    margin-left: 18px;\n    padding: 5px;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.form-inline {\n    flex-flow: row;\n}\n.form-inline textarea {\n    height: 38px;\n    border-radius: 60px;\n    width: 100%!important;\n}\n.btn-success.disable {\n    cursor: no-drop!important;\n}\n.form-inline a {\n    padding: 8px;\n    border-radius: 60px;\n    margin: 5px;\n    height: 38px;\n    width: 76px;\n    font-size: 13px;\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n    align-content: center;\n}\n.v-spinner {\n    margin-left: 18px;\n    padding: 5px;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -875,11 +875,7 @@ var render = function() {
               [
                 _vm._v("Enviar "),
                 _c("box-icon", {
-                  attrs: {
-                    name: "send",
-                    type: "solid",
-                    color: "rgba(0,0,0,0.1)"
-                  }
+                  attrs: { name: "send", type: "solid", color: "#f1ececa8" }
                 })
               ],
               1
@@ -899,11 +895,7 @@ var render = function() {
               [
                 _vm._v("Enviar "),
                 _c("box-icon", {
-                  attrs: {
-                    name: "send",
-                    type: "solid",
-                    color: "rgba(0,0,0,0.1)"
-                  }
+                  attrs: { name: "send", type: "solid", color: "#f1ececa8" }
                 })
               ],
               1

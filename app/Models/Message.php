@@ -11,6 +11,17 @@ class Message extends Model
     use HasFactory;
 
     protected $fillable = ['body'];
+    protected $appends  = ['owner'];
+
+    public function getOwnerAttribute() {
+
+        return $this->user_id == auth()->user()->id;
+    }
+
+    public function getCreatedAtAttribute($value)
+ {
+     return date("d/m/Y H:i:s", strtotime($value));
+ }
 
     public function user() {
 

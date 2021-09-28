@@ -25,6 +25,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   created: function created() {
@@ -52,12 +54,21 @@ __webpack_require__.r(__webpack_exports__);
       });
     },
     scrollMessages: function scrollMessages() {
-      var scroll = document.querySelector('.table-message');
-      scroll.scrollTo(0, scroll.scrollHeight);
+      var _this2 = this;
+
+      setTimeout(function () {
+        /* let scroll = document.querySelector('.table-message')
+        scroll.scrollTo(0, scroll.scrollHeight) */
+        _this2.$refs.messages.scroll({
+          top: _this2.$refs.messages.scrollHeight,
+          "let": 0,
+          behavior: 'smooth'
+        });
+      }, 1000);
     }
   },
   watch: {
-    messages: function messages() {
+    listMessages: function listMessages() {
       this.scrollMessages();
     }
   },
@@ -130,7 +141,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.table-message[data-v-378e801b] {\n    max-height: 333px;\n    overflow-y: scroll;\n    overflow-x: hidden;\n}\n.table-message[data-v-378e801b]::-webkit-scrollbar {\n    width: 8px;\n}\n.table-message[data-v-378e801b]::-webkit-scrollbar-track {\n  background: rgb(196, 195, 195, 0.3);        /* color of the tracking area */\n  border-radius: 5px;\n}\n.table-message[data-v-378e801b]::-webkit-scrollbar-thumb {\n  background-color: rgb(85, 85, 85, .1);    /* color of the scroll thumb */\n  border-radius: 20px;       /* roundness of the scroll thumb */\n  border: 3px rgb(85, 85, 85, .1);  /* creates padding around scroll thumb */\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.table-message[data-v-378e801b] {\n    max-height: 333px;\n    overflow-y: scroll;\n    overflow-x: hidden;\n}\n.table-message[data-v-378e801b]::-webkit-scrollbar {\n    width: 8px;\n}\n.table-message[data-v-378e801b]::-webkit-scrollbar-track {\n  background: rgb(196, 195, 195, 0.5);        /* color of the tracking area */\n  border-radius: 5px;\n}\n.table-message[data-v-378e801b]::-webkit-scrollbar-thumb {\n  background-color: rgb(85, 85, 85, .4);    /* color of the scroll thumb */\n  border-radius: 20px;       /* roundness of the scroll thumb */\n  border: 3px rgb(85, 85, 85, .3);  /* creates padding around scroll thumb */\n}\n#header-message header[data-v-378e801b] {\n    background-color: #a0a09feb ;\n}\n#header-message header img[data-v-378e801b] {\n    width: 50px;\n    height: 50px;\n}\n\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -906,9 +917,11 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
+    _c("div", { staticClass: "head-message" }, [_c("header-message")], 1),
+    _vm._v(" "),
     _c(
       "div",
-      { staticClass: "table-message" },
+      { ref: "messages", staticClass: "table-message" },
       _vm._l(_vm.listMessages, function(message) {
         return _c("message-user", {
           key: message.id,

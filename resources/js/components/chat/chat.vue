@@ -3,8 +3,8 @@
         <Message></Message>
         <div class="form-inline">
             <textarea @keypress="keypressMessage" v-model="body" placeholder="Sua Messagem..." class="form-control" cols="1" rows="3"></textarea>
-            <a @click.prevent="sendMessage" href="" v-if="!loading" class="btn btn-success">Enviar <box-icon name='send' type='solid' color='rgba(0,0,0,0.1)'></box-icon></a>
-            <a @click.prevent="sendMessage" href="" v-else class="btn btn-success disable">Enviar <box-icon name='send' type='solid' color='rgba(0,0,0,0.1)'></box-icon></a>
+            <a @click.prevent="sendMessage" href="" v-if="!loading" class="btn btn-success">Enviar <box-icon name='send' type='solid' color='#f1ececa8'></box-icon></a>
+            <a @click.prevent="sendMessage" href="" v-else class="btn btn-success disable">Enviar <box-icon name='send' type='solid' color='#f1ececa8'></box-icon></a>
         </div>
             <pulse-loader :loading="loading" :color="'#2fa360'" :size="'8PX'"></pulse-loader>
     </div>
@@ -48,14 +48,18 @@ export default {
 </script>
 
 <style>
-.btn-success.disable {
-    cursor: no-drop!important;
+.form-inline {
+    flex-flow: row;
 }
 
 .form-inline textarea {
     height: 38px;
     border-radius: 60px;
-    width: 396px!important;
+    width: 100%!important;
+}
+
+.btn-success.disable {
+    cursor: no-drop!important;
 }
 
 .form-inline a {

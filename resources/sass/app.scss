@@ -6,3 +6,26 @@
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+
+body {
+    background: url('/img/background.jpg');
+    background-repeat: repeat;
+    background-size: auto;
+}
+
+#app .navbar {
+    background-color:#d4cdc6ba !important
+}
+
+.navbar .container img {
+    width: 63px;
+    height: 60px;
+    padding: 10px;
+}
+
+.row .chat.col-9 {
+    box-shadow: 1px 0 rgb(0 0 0 / 8%);
+}
+
+
