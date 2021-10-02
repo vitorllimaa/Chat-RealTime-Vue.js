@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Chat\ChatController;
 use App\Http\Controllers\UserController;
+use Illuminate\Support\Facades\Broadcast;
 
 
 Route::group(['middleware' => 'auth'], function () {
@@ -12,6 +13,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('chat/messages', [ChatController::class, 'messages'])->name('messageschat');
 
     Route::get('meuperfil', [UserController::class, 'profile'])->name('profile');
+    Route::post('meuperfil', [UserController::class, 'profileUpdate'])->name('profile.update');
 
 });
 

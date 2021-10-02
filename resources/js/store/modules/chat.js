@@ -14,6 +14,20 @@ export default {
 
         ADD_MESSAGE (state, message) {
             state.messages.push(message)
+        },
+
+        LOAD_USERS (state, users) {
+            state.users = users
+        },
+
+        JOINING_USER (state, user) {
+            state.users.push(user)
+        },
+
+        LEAVING_USER (state, user) {
+            state.users = state.users.filter(e => {
+                return e.id != user.id
+            });
         }
 
     },

@@ -19,6 +19,16 @@
     <!-- Styles -->
     <link href="{{ asset('/css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="/css/chat/stylemessage.css">
+
+    <script>
+        window.Laravel = {!! json_encode([
+            'csrf'   => csrf_token(),
+            'pusher' => [
+                'key' => config('broadcasting.connections.pusher.key'),
+                'cluster' => config('broadcasting.connections.pusher.options.cluster')
+                ]
+        ]) !!}
+    </script>
 </head>
 <body>
     <div id="app">
@@ -51,6 +61,11 @@
                             @endif
                         @else
                             <li class="nav-item dropdown">
+                                @if (Auth::user()->image    )
+                                <img id="image" src="/storage/users/{{ Auth::user()->image }}" alt="{{ Auth::user()->image }}">
+                                @else
+                                <img id="image" src="/storage/users/anônimo.png" alt="anônimo">
+                                @endif
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
                                 </a>

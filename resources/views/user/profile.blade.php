@@ -8,13 +8,29 @@
                 <div class="card-header">Meu perfil</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
+
+                    @if (session('success'))
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        {{ session('success')}}
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                    @elseif (session('error'))
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        {{ session('error')}}
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                    @endif
+                    <form action="{{ route('profile.update') }}" method="POST" enctype="multipart/form-data">
                         @csrf
 
                         <div class="form-group row">
                             <label for="name" class="col-md-4 col-form-label text-md-right">Nome</label>
                             <div class="col-md-6">
-                                <input type="text" type="name" class="form-control" name="name">
+                                <input type="text" type="name" class="form-control" name="name" value="{{ auth()->user()->name }}">
                             </div>
                         </div>
 
@@ -22,7 +38,7 @@
                             <label for="email" class="col-md-4 col-form-label text-md-right">E-mail</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" required autocomplete="email" autofocus>
+                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" autocomplete="email" value="{{ auth()->user()->email }}" autofocus>
 
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
@@ -36,7 +52,7 @@
                             <label for="password" class="col-md-4 col-form-label text-md-right">Senha</label>
 
                             <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" autocomplete="current-password">
 
                                 @error('password')
                                     <span class="invalid-feedback" role="alert">
@@ -48,7 +64,7 @@
 
                         <div class="form-group row">
                             <div class="custom-file">
-                                <label for="password" class="col-md-4 col-form-label text-md-right">Imagem</label>
+                                <label for="password" class="col-md-4 col-form-label text-md-right">Foto de perfil</label>
                                 <input type="file" name="file" class="input-file col-md-6">
                             </div>
                         </div>

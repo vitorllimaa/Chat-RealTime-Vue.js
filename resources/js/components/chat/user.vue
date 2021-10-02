@@ -5,12 +5,16 @@
             <input type="text" name="searc" id="search" placeholder="Pesquisar..."><box-icon name='search-alt-2'></box-icon>
         </div>
         <div class="list-users">
-            <div class="users" v-for="item in 10" :key="item">
-                <div class="img-user">
-                    <img src="/img/perfil.png" alt="">
+            <div class="users" v-for="user in users" :key="user.id">
+                <div class="img-user" v-if="user.image">
+                    <img :src="`/storage/users/${user.image}`" :alt="user.name">
+                </div>
+                <div class="img-user" v-else>
+                    <img :src="`/storage/users/anônimo.png`" alt="anônimo">
                 </div>
                 <div class="name-user">
-                    <p>Pedro Gustavo da Silva</p>
+                    <p v-text="user.name"></p>
+                    <small>Online<span class="header-message-content-online">0</span></small>
                 </div>
             </div>
         </div>
@@ -21,7 +25,7 @@
 export default {
     computed: {
         users () {
-            return [];
+            return this.$store.state.chat.users;
         }
     }
 }
@@ -72,7 +76,7 @@ h3 {
     display: flex;
     align-items: center;
     flex-wrap: nowrap;
-    justify-content: center;
+    justify-content: flex-start;
     max-width: 246px;
     min-width: 184px;
     align-content: center;
@@ -111,4 +115,22 @@ h3 {
   border: 3px rgb(85, 85, 85, .3);  /* creates padding around scroll thumb */
 }
 
+/* usuário online */
+
+.header-message-content-online{
+    background-color: green;
+    color: green;
+    border-radius: 100%;
+    font-size: 0px;
+    padding: 4px;
+    margin: 7px;
+}
+
+.name-user p {
+    margin: 0;
+}
+
+.name-user small {
+    display: flex;
+}
 </style>

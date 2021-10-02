@@ -30,10 +30,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   computed: {
     users: function users() {
-      return [];
+      return this.$store.state.chat.users;
     }
   }
 });
@@ -56,7 +60,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\nh3 {\n    text-align: center;\n}\n.search-user {\n    text-align: center;\n    display: inline-flex;\n}\n.search-user input {\n    width: 20vw;\n    border: 0;\n    border-radius: 10px 0 0 10px;\n    background-color: #f5f5dceb;\n    padding: 0 0 0 20px;\n}\n.search-user input:active {\n    outline: 0;\n}\n.search-user input:focus {\n    outline: 0;\n}\n.search-user box-icon {\n    background-color: #f5f5dceb;\n    border-radius: 0 10px 10px 0;\n    border: 0;\n    padding: 2px;\n}\n.list-users {\n    max-height: 400px;\n    min-height: 400px;\n    overflow-y: scroll;\n    overflow-x: hidden;\n}\n.users {\n    display: flex;\n    align-items: center;\n    flex-wrap: nowrap;\n    justify-content: center;\n    max-width: 246px;\n    min-width: 184px;\n    align-content: center;\n    flex-direction: row;\n    background-color: #f8fafc45;\n    border-radius: 3px;\n    margin: 10px;\n    padding: 7px;\n    box-shadow: 1px 1px 1px 1px #00000017;\n}\n.users .img-user img {\n    width: 44px;\n    height: 40px;\n    border-radius: 50%;\n}\n.users .name-user {\n    text-align: center;\n    font-weight: 600;\n    padding: 0 7px;\n}\n.list-users::-webkit-scrollbar {\n    width: 8px;\n}\n.list-users::-webkit-scrollbar-track {\n  background: rgb(196, 195, 195, 0.5);        /* color of the tracking area */\n  border-radius: 5px;\n}\n.list-users::-webkit-scrollbar-thumb {\n  background-color: rgb(85, 85, 85, .4);    /* color of the scroll thumb */\n  border-radius: 20px;       /* roundness of the scroll thumb */\n  border: 3px rgb(85, 85, 85, .3);  /* creates padding around scroll thumb */\n}\n\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\nh3 {\n    text-align: center;\n}\n.search-user {\n    text-align: center;\n    display: inline-flex;\n}\n.search-user input {\n    width: 20vw;\n    border: 0;\n    border-radius: 10px 0 0 10px;\n    background-color: #f5f5dceb;\n    padding: 0 0 0 20px;\n}\n.search-user input:active {\n    outline: 0;\n}\n.search-user input:focus {\n    outline: 0;\n}\n.search-user box-icon {\n    background-color: #f5f5dceb;\n    border-radius: 0 10px 10px 0;\n    border: 0;\n    padding: 2px;\n}\n.list-users {\n    max-height: 400px;\n    min-height: 400px;\n    overflow-y: scroll;\n    overflow-x: hidden;\n}\n.users {\n    display: flex;\n    align-items: center;\n    flex-wrap: nowrap;\n    justify-content: flex-start;\n    max-width: 246px;\n    min-width: 184px;\n    align-content: center;\n    flex-direction: row;\n    background-color: #f8fafc45;\n    border-radius: 3px;\n    margin: 10px;\n    padding: 7px;\n    box-shadow: 1px 1px 1px 1px #00000017;\n}\n.users .img-user img {\n    width: 44px;\n    height: 40px;\n    border-radius: 50%;\n}\n.users .name-user {\n    text-align: center;\n    font-weight: 600;\n    padding: 0 7px;\n}\n.list-users::-webkit-scrollbar {\n    width: 8px;\n}\n.list-users::-webkit-scrollbar-track {\n  background: rgb(196, 195, 195, 0.5);        /* color of the tracking area */\n  border-radius: 5px;\n}\n.list-users::-webkit-scrollbar-thumb {\n  background-color: rgb(85, 85, 85, .4);    /* color of the scroll thumb */\n  border-radius: 20px;       /* roundness of the scroll thumb */\n  border: 3px rgb(85, 85, 85, .3);  /* creates padding around scroll thumb */\n}\n\n/* usuário online */\n.header-message-content-online{\n    background-color: green;\n    color: green;\n    border-radius: 100%;\n    font-size: 0px;\n    padding: 4px;\n    margin: 7px;\n}\n.name-user p {\n    margin: 0;\n}\n.name-user small {\n    display: flex;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -566,11 +570,25 @@ var render = function() {
     _c(
       "div",
       { staticClass: "list-users" },
-      _vm._l(10, function(item) {
-        return _c("div", { key: item, staticClass: "users" }, [
-          _vm._m(0, true),
+      _vm._l(_vm.users, function(user) {
+        return _c("div", { key: user.id, staticClass: "users" }, [
+          user.image
+            ? _c("div", { staticClass: "img-user" }, [
+                _c("img", {
+                  attrs: { src: "/storage/users/" + user.image, alt: user.name }
+                })
+              ])
+            : _c("div", { staticClass: "img-user" }, [
+                _c("img", {
+                  attrs: { src: "/storage/users/anônimo.png", alt: "anônimo" }
+                })
+              ]),
           _vm._v(" "),
-          _vm._m(1, true)
+          _c("div", { staticClass: "name-user" }, [
+            _c("p", { domProps: { textContent: _vm._s(user.name) } }),
+            _vm._v(" "),
+            _vm._m(0, true)
+          ])
         ])
       }),
       0
@@ -582,16 +600,11 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "img-user" }, [
-      _c("img", { attrs: { src: "/img/perfil.png", alt: "" } })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "name-user" }, [
-      _c("p", [_vm._v("Pedro Gustavo da Silva")])
+    return _c("small", [
+      _vm._v("Online"),
+      _c("span", { staticClass: "header-message-content-online" }, [
+        _vm._v("0")
+      ])
     ])
   }
 ]

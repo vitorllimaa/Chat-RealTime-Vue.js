@@ -32,6 +32,8 @@
         "vuex": "^3.6.2"
     },
     "dependencies": {
+        "laravel-echo": "^1.11.2",
+        "pusher-js": "^7.0.3",
         "vue-spinner": "^1.0.4"
     }
 }

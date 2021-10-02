@@ -65,19 +65,19 @@ export default ({
 .header-message-content-online {
     background-color: green;
     color: green;
-    border-radius: 50%;
-    font-size: 1px;
+    border-radius: 100%;
+    font-size: 0px;
     padding: 4px;
-    margin: 5px;
+    margin: 7px;
 }
 
 .header-message-content-offline {
     background-color: #e3342f;
     color: #e3342f;
-    border-radius: 50%;
-    font-size: 1px;
+    border-radius: 100%;
+    font-size: 0px;
     padding: 4px;
-    margin: 5px;
+    margin: 7px;
 }
 
 
