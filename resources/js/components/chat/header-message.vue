@@ -1,9 +1,9 @@
 <template>
     <div class="header-message">
         <header>
-            <img src="/img/perfil.jpg" alt="">
+            <img src="/img/Soccer_icon-icons.com_67819.png" alt="">
             <div class="header-message-content">
-                <h1>Pedro Gustavo da Silva</h1>
+                <h1>Grupo dos Amigos do Futebol	&#9917;</h1>
                 <small>Online<span class="header-message-content-online">0</span></small>
             </div>
         </header>
@@ -36,7 +36,6 @@ export default ({
 .header-message header img {
     width: 44px;
     height: 40px;
-    border-radius: 50%;
     margin-left: 24px;
 }
 

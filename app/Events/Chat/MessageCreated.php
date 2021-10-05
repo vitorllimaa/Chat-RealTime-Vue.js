@@ -29,7 +29,9 @@ class MessageCreated implements ShouldBroadcast
     public function broadcastWith () {
 
         return [
-            'message' => $this->message->load('user')
+            'message' => array_merge($this->message->load('user')->toArray(), [
+                'owner' => false
+            ])
         ];
     }
     /**
@@ -39,6 +41,6 @@ class MessageCreated implements ShouldBroadcast
      */
     public function broadcastOn()
     {
-        return new PrivateChannel('chat');
+        return new PresenceChannel('chat');
     }
 }

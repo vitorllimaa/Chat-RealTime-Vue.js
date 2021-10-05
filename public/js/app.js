@@ -2071,7 +2071,7 @@ Echo.join('chat').here(function (users) {
 }).leaving(function (user) {
   _store_store__WEBPACK_IMPORTED_MODULE_0__["default"].commit('LEAVING_USER', user);
 }).listen('Chat.MessageCreated', function (e) {
-  console.log(e.message);
+  _store_store__WEBPACK_IMPORTED_MODULE_0__["default"].commit('ADD_MESSAGE', e.message);
 });
 
 /***/ }),

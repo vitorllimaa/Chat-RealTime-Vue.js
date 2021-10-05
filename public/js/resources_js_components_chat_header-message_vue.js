@@ -43,7 +43,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.header-message[data-v-2afbe363] {\n    background-color: #d0d0d0cf;\n    border-radius: 13px;\n    margin: 10px;\n}\n.header-message header[data-v-2afbe363] {\n    display: flex;\n    align-items: center;\n    justify-content: flex-start;\n    align-content: center;\n    flex-wrap: nowrap;\n}\n.header-message header img[data-v-2afbe363] {\n    width: 44px;\n    height: 40px;\n    border-radius: 50%;\n    margin-left: 24px;\n}\n.header-message-content[data-v-2afbe363] {\n    display: flex;\n    align-items: flex-start;\n    flex-direction: column;\n    align-content: stretch;\n    justify-content: center;\n    flex-wrap: nowrap;\n    margin: 10px 0 5px 0;\n}\n.header-message-content h1[data-v-2afbe363] {\n    margin-bottom: 0;\n    padding-left: 46px;\n    font-size: 20px;\n    font-weight: unset;\n}\n.header-message-content small[data-v-2afbe363] {\n    padding-left: 46px;\n    display: flex;\n}\n.header-message-content-online[data-v-2afbe363] {\n    background-color: green;\n    color: green;\n    border-radius: 100%;\n    font-size: 0px;\n    padding: 4px;\n    margin: 7px;\n}\n.header-message-content-offline[data-v-2afbe363] {\n    background-color: #e3342f;\n    color: #e3342f;\n    border-radius: 100%;\n    font-size: 0px;\n    padding: 4px;\n    margin: 7px;\n}\n\n\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.header-message[data-v-2afbe363] {\n    background-color: #d0d0d0cf;\n    border-radius: 13px;\n    margin: 10px;\n}\n.header-message header[data-v-2afbe363] {\n    display: flex;\n    align-items: center;\n    justify-content: flex-start;\n    align-content: center;\n    flex-wrap: nowrap;\n}\n.header-message header img[data-v-2afbe363] {\n    width: 44px;\n    height: 40px;\n    margin-left: 24px;\n}\n.header-message-content[data-v-2afbe363] {\n    display: flex;\n    align-items: flex-start;\n    flex-direction: column;\n    align-content: stretch;\n    justify-content: center;\n    flex-wrap: nowrap;\n    margin: 10px 0 5px 0;\n}\n.header-message-content h1[data-v-2afbe363] {\n    margin-bottom: 0;\n    padding-left: 46px;\n    font-size: 20px;\n    font-weight: unset;\n}\n.header-message-content small[data-v-2afbe363] {\n    padding-left: 46px;\n    display: flex;\n}\n.header-message-content-online[data-v-2afbe363] {\n    background-color: green;\n    color: green;\n    border-radius: 100%;\n    font-size: 0px;\n    padding: 4px;\n    margin: 7px;\n}\n.header-message-content-offline[data-v-2afbe363] {\n    background-color: #e3342f;\n    color: #e3342f;\n    border-radius: 100%;\n    font-size: 0px;\n    padding: 4px;\n    margin: 7px;\n}\n\n\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -539,10 +539,12 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "header-message" }, [
       _c("header", [
-        _c("img", { attrs: { src: "/img/perfil.jpg", alt: "" } }),
+        _c("img", {
+          attrs: { src: "/img/Soccer_icon-icons.com_67819.png", alt: "" }
+        }),
         _vm._v(" "),
         _c("div", { staticClass: "header-message-content" }, [
-          _c("h1", [_vm._v("Pedro Gustavo da Silva")]),
+          _c("h1", [_vm._v("Grupo dos Amigos do Futebol\t⚽")]),
           _vm._v(" "),
           _c("small", [
             _vm._v("Online"),

@@ -12,5 +12,5 @@ Echo.join('chat')
             store.commit('LEAVING_USER', user)
         })
         .listen('Chat.MessageCreated', e => {
-            console.log(e.message)
+            store.commit('ADD_MESSAGE', e.message)
         })
