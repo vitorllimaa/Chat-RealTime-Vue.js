@@ -1,73 +1,56 @@
 
-![Logo of the project](https://github.com/Lucasdfg07/Blog_Lucas_Fernandes/blob/master/app/assets/images/logo.png)
+![Logo of the project](https://github.com/vitorllimaa/Chat-RealTime-Vue.js/blob/master/public/img/fotos%20site%20bate%20papo/logo.png?raw=true)
 
 
-## Blog Lucas Fernandes
-This is my blog \o/ 
-Enjoy It and I hope you can learn a lot!
+## Bate Papo Online Vitor Lima
+Este é o meu Bate-Papo \ o /
+Aproveite e espero que você possa aprender muito!
 
 
-## Technology 
+## Tecnologias 
 
-Here are the technologies used in this project.
+Aqui estão as tecnologias utilizadas neste projeto.
 
-* Ruby version  3.0.0
-* Rails version 6.1.3.2
-* PostgreSQL
-* Webpacker
+* PHP version  7.3.30
+* Laravel version 8.0.0
+* Mysql
+* Vue.js
 
-## Services Used
+## Serviços Usados
 
 * Github
-* Heroku
-
-## Ruby Gems
-
-* Devise
-* Bootstrap
-* Kaminari
-* Select2
-* Cancancan
+* Docker
 
 
-## Getting started
+## Começando
 
-* Dependency
-  - Ruby  
-  - Rails
+* Dependência
+  - PHP  
+  - Laravel
 
-* To create and build your database accord of the project.
-  - rake db:create db:migrate
+* Para criar e construir seu banco de dados de acordo com o projeto.
+  - db:User
+
+* Para criar o banco de dados.
+  - php artisan migrate
   
-* To create the previous files to use on the project, on the database.
-  - rake db:seed
-  
-* To install the gems.
-  - bundle install
-  
-* To run the project.
-  - rails s
+* Para executar o projeto.
+  - Baixe e instale o laradock no projeto
 
-## How to use
+## como usar
 
-### 1 - When you access, you will see the Home page <3
+### 1 - Ao acessar, você verá a página inicial <3
 
-![Homepage image](https://github.com/Lucasdfg07/Blog_Lucas_Fernandes/blob/master/public/readme/home.png)
+![Homepage image](https://github.com/vitorllimaa/Chat-RealTime-Vue.js/blob/master/public/img/fotos%20site%20bate%20papo/tela%20de%20login.png?raw=true)
 
-### 2 - You can also see a lot of information on the Blog posts session.
+### 2 - Crie uma conta e você será redirecionado para home da página.
 
-![Posts](https://github.com/Lucasdfg07/Blog_Lucas_Fernandes/blob/master/public/readme/posts.png)
+![Post show](https://github.com/vitorllimaa/Chat-RealTime-Vue.js/blob/master/public/img/fotos%20site%20bate%20papo/bate%20papo.png?raw=true)
 
-### 3 - Or access some of the posts :D
 
-![Post show](https://github.com/Lucasdfg07/Blog_Lucas_Fernandes/blob/master/public/readme/post_1.png)
-![Post show](https://github.com/Lucasdfg07/Blog_Lucas_Fernandes/blob/master/public/readme/post_2.png)
-![Post show](https://github.com/Lucasdfg07/Blog_Lucas_Fernandes/blob/master/public/readme/post_3.png)
+### 3 - Depois é só aproveitar :D
 
-### 4 - Or you can see my personal Portfolio.
-
-![Portfolio](https://github.com/Lucasdfg07/Blog_Lucas_Fernandes/blob/master/public/readme/portfolio_1.png)
-![Portfolio](https://github.com/Lucasdfg07/Blog_Lucas_Fernandes/blob/master/public/readme/portfolio_2.png)
+![Post show](https://github.com/vitorllimaa/Chat-RealTime-Vue.js/blob/master/public/img/fotos%20site%20bate%20papo/bate%20papo.png?raw=true)
 
 
 ## Features
