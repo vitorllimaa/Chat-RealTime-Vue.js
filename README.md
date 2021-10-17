@@ -45,7 +45,7 @@ Aqui estão as tecnologias utilizadas neste projeto.
 
 ### 2 - Crie uma conta e você será redirecionado para home da página.
 
-![Post show](https://github.com/vitorllimaa/Chat-RealTime-Vue.js/blob/master/public/img/fotos%20site%20bate%20papo/bate%20papo.png?raw=true)
+![Post show](https://github.com/vitorllimaa/Chat-RealTime-Vue.js/blob/master/public/img/fotos%20site%20bate%20papo/criar%20conta.png?raw=true)
 
 
 ### 3 - Depois é só aproveitar :D
@@ -53,22 +53,20 @@ Aqui estão as tecnologias utilizadas neste projeto.
 ![Post show](https://github.com/vitorllimaa/Chat-RealTime-Vue.js/blob/master/public/img/fotos%20site%20bate%20papo/bate%20papo.png?raw=true)
 
 
-
 ## Links
-  - Deploy on Heroku: https://lucas-dev.com/
-  - Repository: https://github.com/Lucasdfg07/Blog_Lucas_Fernandes
-    - In case of sensitive bugs like security vulnerabilities, please contact
-      Lucassiqueiraferandes07@gmail.com directly instead of using issue tracker. We value your effort
-      to improve the security and privacy of this project!
+  - Repositório: https://github.com/vitorllimaa/Chat-RealTime-Vue.js
+    - Em caso de bugs sensíveis, como vulnerabilidades de segurança, por favor entre em contato.
+    <br/>
+    [![Outlook](https://img.shields.io/badge/Microsoft_Outlook-0078D4?style=for-the-badge&logo=microsoft-outlook&logoColor=white)](mailto:vitorlimavital@hotmail.com?subject=)
 
-  ## Versioning
+  ## Controle de versão
 
   1.0.0.0
 
 
-  ## Authors
+  ## Autores
 
-  * **Lucas Siqueira Fernandes** 
+  * **Vitor Lima Vital** 
 
-  Please follow github and join us!
-  Thanks to visiting me and good coding!
+  Siga o github e junte-se a nós!
+  Obrigado por me visitar e boa codificação!
