@@ -56,7 +56,7 @@ Aqui estão as tecnologias utilizadas neste projeto.
 ## Links
   - Repositório: https://github.com/vitorllimaa/Chat-RealTime-Vue.js
     - Em caso de bugs sensíveis, como vulnerabilidades de segurança, por favor entre em contato.
-    <br/>
+   
     [![Outlook](https://img.shields.io/badge/Microsoft_Outlook-0078D4?style=for-the-badge&logo=microsoft-outlook&logoColor=white)](mailto:vitorlimavital@hotmail.com?subject=)
 
   ## Controle de versão
