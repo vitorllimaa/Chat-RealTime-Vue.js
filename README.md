@@ -53,12 +53,6 @@ Aqui estão as tecnologias utilizadas neste projeto.
 ![Post show](https://github.com/vitorllimaa/Chat-RealTime-Vue.js/blob/master/public/img/fotos%20site%20bate%20papo/bate%20papo.png?raw=true)
 
 
-## Features
-
-The main features of the application are:
- - Publish Posts.
- - Learn a lot of information <3
-
 
 ## Links
   - Deploy on Heroku: https://lucas-dev.com/
